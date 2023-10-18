@@ -1,0 +1,26 @@
+.icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: {
+    size: contain;
+    position: center;
+    repeat: no-repeat;
+  }
+  vertical-align: baseline;
+
+  &-small {
+    width: 20px;
+    height: 20px;
+  }
+  
+  &.cs-w {
+    background-image: url($icon-url + 'cs-w.png');
+  }
+  &.gift-w {
+    background-image: url($icon-url + 'gift-w.png');
+  }
+  &.airplane-w {
+    background-image: url($icon-url + 'airplane-w.png');
+  }
+}

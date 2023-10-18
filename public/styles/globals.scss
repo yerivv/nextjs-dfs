@@ -1,0 +1,284 @@
+@import '@/public/styles/base/reset.scss';
+@import '@/public/styles/base/typography.scss';
+@import '@/public/styles/icon.scss';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #fff;
+  font-family: $font-default-name, serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+strong {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 키보드로 포커스 시 */
+button:focus-visible {
+  outline: 3px solid #000;
+}
+a:focus-visible {
+  outline: 0;
+  text-decoration: underline;
+}
+
+/* 마우스, 터치로 포커스 시 */
+button:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
+}
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.skip-navigation {
+  position: relative;
+  z-index: 9999;
+  a {
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: #eee;
+
+    &:focus,
+    &:active {
+      top: 0;
+    }
+  }
+}
+
+.blind {
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.contents {
+  @include desktop {
+    @include max-width;
+  }
+  min-height: 80vh;
+}
+
+#wrap {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.about {
+  background-color: aquamarine;
+}
+
+.d-block-desktop {
+  display: none;
+
+  @include tablet {
+    display: block !important
+  }
+  @include desktop {
+    display: block !important
+  }
+}
+
+.d-block-mobile {
+  display: block;
+
+  @include tablet {
+    display: none !important
+  }
+  @include desktop {
+    display: none !important
+  }
+}
+
+.d-none-mobile {
+  display: none;
+
+  @include tablet {
+    display: block !important
+  }
+  @include desktop {
+    display: block !important
+  }
+}
+
+.wrap-product {
+  display: flex;
+  flex-wrap: wrap;
+  gap:40px 15px;
+  position: relative;
+  margin: 0 20px;
+  .item {
+    flex: 0 0 calc(50% - (15px/2));
+  }
+
+  @include tablet {
+    .item {
+      flex: 0 0 calc(33.333% - 10px);
+    }
+  }
+
+  @include desktop {
+    gap:40px 20px;
+    margin: 0;
+    .item {
+      flex: 0 0 calc(25% - 15px);
+    }
+  }
+
+  .box-badge {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    background-color: skyblue;
+    text-align: center;
+  }
+
+  .box-image {
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    @include desktop {
+      border-radius: 15px;
+    }
+    .box-thumb {
+      position: relative;
+      width: 100%;
+      padding:28px 0;
+      background-color: transparent;
+      @include desktop {
+        padding:55px 0;
+      }
+      .thumb {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        &:after {
+          display: block;
+          padding-bottom: 90%;
+          content: '';
+        }
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+        }
+      }
+      .back-blind {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $bg-color1;
+        mix-blend-mode: darken;
+      }
+    }
+
+    .box-hover {
+      display: none;
+      @include desktop {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .box-info {
+    .brand {
+      color: $font-color2;
+      font-size: 1.1rem;
+      @include desktop {
+        font-size: 1.5rem;
+      }
+    }
+    .name {
+      @include line-clamp2;
+      font-weight: 700;
+      @include desktop {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.wrap-banner {
+  .box-banner {
+    overflow: hidden;
+    position: relative;
+    @include desktop {
+      border-radius: 15px;
+    }
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.7;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 52%, rgba(0,0,0,1) 100%);
+      content: '';
+      @include desktop {
+        opacity: 0.3;
+        background: $primary-color1;
+      }
+    }
+  }
+}
+
+.brand-detail {
+  .intro {
+    padding: 20px;
+    border-bottom: 1px solid $line-color1;
+    color: $font-color2;
+    .title {
+      margin-bottom: 10px;
+      font-size: 2.4rem;
+      line-height: 1.35;
+    }
+
+    @include desktop {
+      display: flex;
+      align-items: center;
+      padding:20px 0;
+      font-size: 2rem;
+      .title {
+        width: 238px;
+        margin-bottom: 0;
+        font-size: 5rem;
+      }
+      .context {
+        width: calc(100% - 238px);
+      }
+    }
+  }
+}
+
+.section {
+  margin-top: 40px;
+}

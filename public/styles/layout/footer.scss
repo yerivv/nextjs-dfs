@@ -1,0 +1,23 @@
+footer {
+  display: none;
+  background-color: $primary-color1;
+  color: $primary-color2;
+  
+  .info-content {
+    border-bottom: 1px solid $font-color1;
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  @include desktop {
+    .info-content {
+      @include max-width;
+      ul {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+}

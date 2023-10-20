@@ -1,0 +1,111 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #fff;
+  font-family: $font-default-name, serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+strong {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 키보드로 포커스 시 */
+button:focus-visible {
+  outline: 3px solid #000;
+}
+a:focus-visible {
+  outline: 0;
+  text-decoration: underline;
+}
+
+/* 마우스, 터치로 포커스 시 */
+button:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
+}
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.skip-navigation {
+  position: relative;
+  z-index: 9999;
+  a {
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: #eee;
+
+    &:focus,
+    &:active {
+      top: 0;
+    }
+  }
+}
+
+.blind {
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.d-block-desktop {
+  display: none;
+
+  @include tablet {
+    display: block !important
+  }
+  @include desktop {
+    display: block !important
+  }
+}
+
+.d-block-mobile {
+  display: block;
+
+  @include tablet {
+    display: none !important
+  }
+  @include desktop {
+    display: none !important
+  }
+}
+
+.d-none-mobile {
+  display: none;
+
+  @include tablet {
+    display: block !important
+  }
+  @include desktop {
+    display: block !important
+  }
+}
+
+.contents {
+  @include desktop {
+    @include max-width;
+  }
+  min-height: 80vh;
+}
+
+#wrap {
+  width: 100%;
+  overflow-x: hidden;
+}

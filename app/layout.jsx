@@ -1,4 +1,4 @@
-import '@/public/styles/globals.scss'
+import '@/public/styles/style.scss'
 import BasicHeader from './component/layout/BasicHeader';
 import BasicFooter from './component/layout/BasicFooter';
 

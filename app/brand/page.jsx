@@ -1,11 +1,10 @@
 'use client'
 import Image from "next/image"
 import useMobile from "@/app/hook/useMobile"
-import useDesktop from "@/app/hook/useDesktop";
+import ProductItem from "../component/product/ProductItem";
 
 export default function BrandDetail() {
   const isMobile = useMobile();
-  const isDesktop = useDesktop();
   return (
     <div className="brand-detail">
       <h2>브랜드 로고</h2>
@@ -35,44 +34,7 @@ export default function BrandDetail() {
         <h3 className="blind">브랜드 상품 리스트</h3>
         <div className="wrap-product">
           {/* 상품 개당 box */}
-          <div className="item">
-            <div className="box-badge">
-              <span>1</span>
-            </div>
-            <div className="box-image">
-              <div className="box-thumb">
-                <div className="thumb"><Image src="/static/images/sample/product/sample-1.jpg" width={160} height={160} style={{width: '100%', height: '100%'}} alt="상품명" /></div>
-                <div className="back-blind"></div>
-              </div>
-            {isDesktop && 
-              <div className="box-hover">
-                <div>
-                  <button className="btn1">상품찜</button>
-                  <button className="btn2">선물하기</button>
-                  <button className="btn3">장바구니</button>
-                  <button className="btn4">바로구매</button>
-                  <div className="btn5">품절</div>
-                  <button className="btn5">상세보기</button>
-                  <button className="btn5">재입고 알림 신청</button>
-                </div>
-                <div className="age-limit">연령제한표시</div>
-              </div>
-            }
-            </div>
-            <div className="box-info">
-              <div className="brand">스윗니모</div>
-              <div className="name">로얄살루트 21년 시그니처 블렌드 로얄살루트 21년 시그니처 블렌드 (원산지:스코틀랜드)</div>
-              <div className="price-info">
-                <div>$350 20%</div>
-                <div>$325 (413,400원)</div>
-              </div>
-              <div className="label-group">
-                <span className="label">사은품</span>
-                <span className="label">쿠폰</span>
-                <span className="label">세인</span>
-              </div>
-            </div>
-          </div>
+          <ProductItem />
           {/* //상품 개당 box */}
           <div className="item">2</div>
           <div className="item">3</div>

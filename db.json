@@ -118,5 +118,9 @@
         "age": false
       }
     ]
+  },
+  "search" : {
+    "word": "여름엔 모로칸오일~~~", 
+    "keyword": "https://stg.koreanairdfs.com/products/S04012F0?qna=1&reviews=1"
   }
 }

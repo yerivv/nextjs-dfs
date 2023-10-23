@@ -2,8 +2,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import useDesktop from "@/app/hook/useDesktop";
+import { priceKor, priceEng } from "@/app/utils/format"
 
-const ProductItem = () => {
+const ProductItem = ({ item }) => {
   const isDesktop = useDesktop();
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => {
@@ -12,57 +13,72 @@ const ProductItem = () => {
   const handleMouseLeave = () => {
     setIsHovered(false);
   }
+  const formattedpriceOrg = priceEng(item.origin);
+  const formattedpriceEng = priceEng(item.priceE);
+  const fotmattedPriceKo = priceKor(item.priceK);
 
   return (
     <div className="item">
-      <div className="box-badge">
+      {/* <div className="box-badge">
         <span className="best">1</span>
         <span className="sale">단하루</span>
-      </div>
-      <div className="box-image" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      </div> */}
+      <div className="box-image" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onFocus={handleMouseEnter} onBlur={handleMouseLeave}>
         <div className="box-thumb">
-          <div className="thumb"><Image src="/static/images/sample/product/sample-1.jpg" width={160} height={160} style={{width: '100%', height: '100%'}} alt="상품명" /></div>
+          <div className="thumb"><Image src={item.image} width={160} height={160} style={{width: '100%', height: '100%'}} alt={item.name} /></div>
           <div className="back-blind"></div>
         </div>
-  {isDesktop && 
-        <div className={isHovered ? 'box-hover active' : 'box-hover active'}>
+{isDesktop && 
+        <div className={`box-hover ${isHovered ? 'active' : ''}`} tabIndex={0}>
+      {item.stock > 0 ? (
+        item.age === false ? (
           <div className="default">
-            <div className="fn-btn">
-              <button className="btn1">상품찜</button>
-              <button className="btn2">선물하기</button>
-              <button className="btn3">장바구니</button>
-              <button className="btn4">바로구매</button>
+            <div className={`fn-btn`}>
+              <button className="btn wish"><i></i><strong>찜하기</strong></button>
+              <button className="btn gift"><i></i><strong>선물하기</strong></button>
+              <button className="btn cart"><i></i><strong>장바구니</strong></button>
+              <button className="btn direct"><i></i><strong>바로구매</strong></button>
             </div>
-            <div><button className="btn5">상세보기</button></div>
+            <div className="fix-btn"><button className="btn wide radius">상세보기</button></div>
           </div>
-          {/* <div className="sold-out">
-            <div className="btn5">품절</div>
-            <button className="btn5">재입고 알림 신청</button>
+        ) : (
+          <div className="age-limit">
+            <strong className="age">19</strong>
+            <strong>Adult only</strong>
           </div>
-          <div className="age-limit">연령제한표시</div> */}
+        )
+      ) : (
+          <div className="default stock">
+            <div className="fn-btn">
+              <div className="sold-out"><button className="btn radius">일시 품절</button></div>
+            </div>
+            <div className="fix-btn"><button className="btn radius">재입고 알림 신청</button></div>
+          </div>
+      )}
         </div>
-  }
+}
       </div>
       <div className="box-info">
-        <div className="brand">스윗니모</div>
-        <div className="name">로얄살루트 21년 시그니처 블렌드 로얄살루트 21년 시그니처 블렌드 (원산지:스코틀랜드)</div>
+        <div className="brand">{item.brand}</div>
+        <div className="name">{item.name}</div>
         <div className="price-info">
           <div className="info">
-            <span className="origin">$350</span>
-            <span className="sale">20%</span>
+            {item.origin !== null && (<span className="origin">{formattedpriceOrg}</span>)}
+            {item.sale !== null && (<span className="sale">{item.sale}%</span>)}
+            &nbsp;
           </div>
           <div>
-            <strong className="price">$325</strong>
-            <span className="price kor">(413,400원)</span>
+            <strong className="price">{formattedpriceEng}</strong>
+            <span className="price kor">({fotmattedPriceKo})</span>
           </div>
         </div>
+      {item.labels.length > 0 &&
         <div className="label-group">
-          <span className="label">사은품</span>
-          <span className="label">쿠폰</span>
-          <span className="label">세일</span>
-          <span className="label">온라인단독</span>
-          <span className="label">skyshop exclusive</span>
+          {item.labels.map((label, item) => (
+            <span key={item} className="label">{label}</span>
+          ))}
         </div>
+      }
       </div>
     </div>
   )

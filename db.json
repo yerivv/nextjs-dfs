@@ -1,34 +1,122 @@
 {
-  "brand": [
-    { 
-      "id": 1, 
-      "name": "설화수", 
-      "intro": "여성의 아름다움은 계속 진화합니다. 과거의 한 순간에 머무르지 않습니다. 설화수는 이 믿음으로 본연의 아름다움을 찾아 나서며 시간이 흘러도 건강하게 빛나는 아름다움을 탐구했습니다. 설화수와 함께 삶의 모든 순간에서 본연의 아름다움을 누릴 수 있습니다. 한방 과학 연구 센터는 아시아의 지혜와 현대 과학을 끊임없이 접목하며 설화수만의 혁신을 이끌고 있습니다.",
-      "logo": "https://new-tstskyshop.koreanairdfs.com/media/test/20220227182304980439.jpg",
-      "mainBanner": "https://new-tstskyshop.koreanairdfs.com/media/test/20220325110954109858.png",
-      "bannerPC": [
-          "https://new-tstskyshop.koreanairdfs.com/media/test/20220227182312020540.jpg",
-          "https://new-tstskyshop.koreanairdfs.com/media/test/202202271823120205402.jpg"
+  "brand": { 
+    "id": 1, 
+    "name": "설화수", 
+    "intro": "여성의 아름다움은 계속 진화합니다. 과거의 한 순간에 머무르지 않습니다. 설화수는 이 믿음으로 본연의 아름다움을 찾아 나서며 시간이 흘러도 건강하게 빛나는 아름다움을 탐구했습니다. 설화수와 함께 삶의 모든 순간에서 본연의 아름다움을 누릴 수 있습니다. 한방 과학 연구 센터는 아시아의 지혜와 현대 과학을 끊임없이 접목하며 설화수만의 혁신을 이끌고 있습니다.",
+    "logo": "/static/images/sample/product/brand-logo.png",
+    "mainBanner": "https://new-tstskyshop.koreanairdfs.com/media/test/20220325110954109858.png",
+    "bannerPC": [
+        "/static/images/sample/banner/brand-pc.jpg",
+        "/static/images/sample/banner/brand-pc.jpg"
+      ],
+    "bannerMO": [
+      "/static/images/sample/banner/brand-mo.jpg",
+      "/static/images/sample/banner/brand-mo.jpg"
+    ],
+    "product": [
+      {
+        "id": 12345,
+        "image": "/static/images/sample/product/sample-1.jpg",
+        "name": "로얄2살루트 21년 시그니처 블렌드 로얄살루트 21년 시그니처 블렌드 (원산지:스코틀랜드)",
+        "brand": "스윗니모1",
+        "origin": "350",
+        "sale": "20",
+        "priceE": "325",
+        "priceK": "413400",
+        "labels": [
+          "사은품",
+          "쿠폰",
+          "세일",
+          "온라인 단독",
+          "skyshop exclusive"
         ],
-      "bannerMO": [
-        "https://new-tstskyshop.koreanairdfs.com/media/test/20220227182319056690.jpg",
-        "https://new-tstskyshop.koreanairdfs.com/media/test/202202271823190566901.jpg"
-      ]
-    },
-    { 
-      "id": 2, 
-      "name": "니샤네", 
-      "intro": "니샤네(NISHANE)라는 섬세한 향수를 뿌린다는 것은 소중한 추억과 깨달음의 감정을 불러 일으킬 수 있다는 점을 염두에 두고 만든 럭셔리 퍼퓸입니다.<br>이스탄불의 매혹적인 향기와 세계 여러 지역에 널리 퍼져있는 수많은 귀중한 문화유산의 영감을 받은 &#34;The Extrait de Parfum Collection&#34;을 선보입니다.",
-      "logo": "https://new-tstskyshop.koreanairdfs.com/media/test/20220227182304980439.jpg",
-      "mainBanner": "",
-      "bannerPC": [
-          "https://new-tstskyshop.koreanairdfs.com/media/test/20220227182312020540.jpg",
-          "https://new-tstskyshop.koreanairdfs.com/media/test/202202271823120205402.jpg"
+        "stock": "100",
+        "age": false
+      },
+      {
+        "id": 12348,
+        "image": "/static/images/sample/product/sample-2.jpg",
+        "name": "로얄살루트 21년 시그니처 블렌드",
+        "brand": "스윗니모2",
+        "origin": null,
+        "sale": null,
+        "priceE": "180",
+        "priceK": "203400",
+        "labels": [
+          "사은품",
+          "쿠폰"
         ],
-      "bannerMO": [
-        "https://new-tstskyshop.koreanairdfs.com/media/test/20220227182319056690.jpg",
-        "https://new-tstskyshop.koreanairdfs.com/media/test/202202271823190566901.jpg"
-      ]
-    }
-  ]
+        "stock": "0",
+        "age": false
+      },
+      {
+        "id": 12341,
+        "image": "/static/images/sample/product/sample-3.jpg",
+        "name": "로얄살루트 21년 시그니처 블렌드 로얄살루트 21년 시그니처 블렌드 (원산지:스코틀랜드)",
+        "brand": "스윗니모",
+        "origin": "350",
+        "sale": "20",
+        "priceE": "325",
+        "priceK": "413400",
+        "labels": [],
+        "stock": "100",
+        "age": true
+      },
+      {
+        "id": 23232,
+        "image": "/static/images/sample/product/sample-4.jpg",
+        "name": "로얄살루트 21년 시그니처 블렌드 로얄살루트 21년 시그니처 블렌드 (원산지:스코틀랜드)",
+        "brand": "스윗니모",
+        "origin": "350",
+        "sale": "20",
+        "priceE": "325",
+        "priceK": "413400",
+        "labels": [],
+        "stock": "100",
+        "age": false
+      },
+      {
+        "id": 12348,
+        "image": "/static/images/sample/product/sample-2.jpg",
+        "name": "로얄살루트 21년 시그니처 블렌드",
+        "brand": "스윗니모2",
+        "origin": null,
+        "sale": null,
+        "priceE": "180",
+        "priceK": "203400",
+        "labels": [
+          "사은품",
+          "쿠폰"
+        ],
+        "stock": "0",
+        "age": false
+      },
+      {
+        "id": 12341,
+        "image": "/static/images/sample/product/sample-3.jpg",
+        "name": "로얄살루트 21년 시그니처 블렌드 로얄살루트 21년 시그니처 블렌드 (원산지:스코틀랜드)",
+        "brand": "스윗니모",
+        "origin": "350",
+        "sale": "20",
+        "priceE": "325",
+        "priceK": "413400",
+        "labels": [],
+        "stock": "100",
+        "age": true
+      },
+      {
+        "id": 23232,
+        "image": "/static/images/sample/product/sample-4.jpg",
+        "name": "로얄살루트 21년 시그니처 블렌드 로얄살루트 21년 시그니처 블렌드 (원산지:스코틀랜드)",
+        "brand": "스윗니모",
+        "origin": "350",
+        "sale": "20",
+        "priceE": "325",
+        "priceK": "413400",
+        "labels": [],
+        "stock": "100",
+        "age": false
+      }
+    ]
+  }
 }

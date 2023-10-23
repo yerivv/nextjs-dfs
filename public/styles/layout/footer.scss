@@ -1,18 +1,19 @@
 footer {
-  display: none;
+  margin-top: 40px;
   background-color: $primary-color1;
   color: $primary-color2;
+  @include desktop {
+    margin-top: 120px;
+  }
   
   .info-content {
+    display: none;
     border-bottom: 1px solid $font-color1;
     ul {
       display: flex;
       flex-direction: column;
     }
-  }
-
-  @include desktop {
-    .info-content {
+    @include desktop {
       @include max-width;
       ul {
         flex-direction: row;

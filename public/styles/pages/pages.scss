@@ -7,9 +7,6 @@
   .box-banner {
     overflow: hidden;
     position: relative;
-    @include desktop {
-      border-radius: 15px;
-    }
     &:after {
       position: absolute;
       top: 0;
@@ -62,4 +59,11 @@
 .guide-cont {
   padding: 20px 10px;
   background-color: $bg-color1;
+}
+
+.wrap-banner {
+  @include desktop {
+    overflow: hidden;
+    border-radius: 15px;
+  }
 }

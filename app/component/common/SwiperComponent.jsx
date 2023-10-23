@@ -28,8 +28,7 @@ const CommonSwiper = ({ slides, pattern }) => {
     <Swiper {...options} className={pattern}>
       {slides.map((slide, index) => (
         <SwiperSlide className="swiper-slide" key={index}>
-          { slide.imageUrl }
-          { slide.title } - { slide.description }
+          { slide }
         </SwiperSlide>
       ))}
     </Swiper>

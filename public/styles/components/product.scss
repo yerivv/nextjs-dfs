@@ -67,11 +67,11 @@
       }
       .thumb {
         position: relative;
-        width: 90%;
+        width: 96%;
         margin: 0 auto;
         &:after {
           display: block;
-          padding-bottom: 90%;
+          padding-bottom: 96%;
           content: '';
         }
         img {
@@ -93,26 +93,129 @@
     }
 
     .box-hover {
-      display: none;
+      overflow: hidden;
+      width: 0;
+      height: 0;
+      opacity: 0;
       @include desktop {
         &.active {
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 1;
           width: 100%;
           height: 100%;
-          background-color: rgba(0,0,0,0.3);
-          backdrop-filter: blur(5px);
+          opacity: 1;
         }
       }
-
+      .default {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        background-color: rgba(0,0,0,0.3);
+        backdrop-filter: blur(5px);
+      }
+      .age-limit {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(256,256,256,0.3);
+        backdrop-filter: blur(5px);
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 60%;
+          padding-bottom: 60%;
+          border: 10px solid red;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          content: '';
+        }
+        .age {
+          font-size: 7.5rem;
+          line-height: 1;
+        }
+      }
       .fn-btn {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 74%;
+        height: calc(100% - 10% - 44px);
+        margin: 10% auto 0;
+        .btn {
+          color: $primary-color2;
+          font-size: 1.5rem;
+          font-weight: 700;
+          vertical-align: top;
+          i {
+            display: block;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background-color: rgba(256,256,256, 0.67);
+            background-size: 40px 40px;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+          &:hover i {
+            background-color: rgba(256,256,256, 1)
+          }
+          span {
+            display: block;
+          }
+        }
+        .wish i {
+          background-image: url('#{$icon-url}wish.png');
+        }
+        .gift i {
+          background-image: url('#{$icon-url}gift.png');
+        }
+        .cart i {
+          background-image: url('#{$icon-url}cart-in.png');
+        }
+        .direct i {
+          background-image: url('#{$icon-url}direct-order.png');
+        }
+
+        &.other .wish {
+          width: 100%;
+        }
+      }
+      .fix-btn {
+        height: 44px;
+        margin-top: auto;
+        text-align: center;
+        .btn {
+          padding: 5px;
+          font-size: 2rem;
+        }
+      }
+
+      .stock {
+        .fn-btn {
+          justify-content: center;
+          align-items: center;
+          .btn {
+            padding: 5px;
+            border-color: $font-color2;
+            background-color: $font-color2;
+            font-size: 2rem;
+            font-weight: 400;
+          }
+        }
       }
     }
   }
@@ -129,7 +232,7 @@
     }
     .name {
       margin-bottom: 15px;
-      @include line-clamp2;
+      @include line-clamp1;
       font-size: 1.5rem;
       font-weight: 700;
       @include desktop {
@@ -179,4 +282,26 @@
   border-radius: 5px;
   color: $font-color2;
   font-size: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  overflow: visible; 
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: inherit;
+  box-shadow: none;
+  cursor: pointer;
+
+  &.wide {
+    width: 100%;
+  }
+
+  &.radius {
+    height: 44px;
+    border: 1px solid $line-color1;
+    border-radius: 10px;
+    background-color: $primary-color2;
+  }
 }

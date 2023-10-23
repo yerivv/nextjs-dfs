@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image"
-import useMobile from "@/app/hook/useMobile"
+import useResize from '@/app/hook/useResize'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
 
 const BannerItem = ({ pcSlides, moSlides, pattern }) => {
-  const isMobile = useMobile();
+  const isMobile = useResize();
   let options;
   if(pattern == 'brand'){
     options = {

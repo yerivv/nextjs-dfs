@@ -24,8 +24,9 @@ button:focus-visible {
   outline: 3px solid #000;
 }
 a:focus-visible {
-  outline: 0;
-  text-decoration: underline;
+  // outline: 0;
+  // text-decoration: underline;
+  outline: 3px solid #000;
 }
 
 /* 마우스, 터치로 포커스 시 */
@@ -33,7 +34,7 @@ button:focus:not(:focus-visible) {
   outline: none;
   box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
 }
-button:focus:not(:focus-visible) {
+a:focus:not(:focus-visible) {
   outline: none;
 }
 

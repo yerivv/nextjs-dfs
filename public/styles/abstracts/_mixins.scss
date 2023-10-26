@@ -45,3 +45,11 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+@mixin jinair-back {
+  background-color: $point-jinair;
+}
+
+@mixin korean-back {
+  background-color: $point-koreanair;
+}

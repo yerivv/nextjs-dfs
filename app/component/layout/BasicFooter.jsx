@@ -1,5 +1,25 @@
+'use client'
+import Link from 'next/link';
+import useResize from '@/app/hook/useResize'
+
 export default function BasicFooter() {
+  const { isMobile, isDesktop } = useResize();
   return (
+    <>
+    <div className="quick-bar">
+      <Link href="#">항공편등록</Link>
+  {isMobile ? (
+    <>
+      <span tabIndex={0}>최근본상품</span>
+    </>
+  ) : (
+    <>
+      <Link href="#">혜택안내</Link>
+      <Link href="#">이용안내</Link>
+    </>
+  )}
+      <Link href="#">상단으로</Link>
+    </div>
     <footer>
       <div className="info-content">
         <ul>
@@ -17,5 +37,6 @@ export default function BasicFooter() {
       </div>
       <div>카피라이터</div>
     </footer>
+    </>
   )
 }

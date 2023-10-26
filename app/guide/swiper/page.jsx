@@ -1,4 +1,4 @@
-import CommonSwiper from "@/app/component/common/SwiperComponent"
+import CommonSwiper from "@/component/common/SwiperComponent"
 
 const GuideSwiper = () => {
   const slides = [

@@ -41,7 +41,7 @@ a:focus:not(:focus-visible) {
 .skip-navigation {
   position: relative;
   z-index: 9999;
-  a {
+  .btn {
     position: absolute;
     top: -200px;
     left: 0;
@@ -109,4 +109,25 @@ a:focus:not(:focus-visible) {
 #wrap {
   width: 100%;
   overflow-x: hidden;
+}
+
+#main-content {
+  outline: 0;
+}
+
+.site-choice {
+  height: 30px;
+  text-align: center;
+}
+
+.jinair {
+  .site-choice {
+    @include jinair-back;
+  }
+}
+
+.koreanair {
+  .site-choice {
+    @include korean-back;
+  }
 }

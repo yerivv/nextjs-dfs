@@ -1,11 +1,22 @@
 'use client'
-import Link from 'next/link'
+import Link from 'next/link';
+import { usePathname } from 'next/navigation'
 import useResize from '@/app/hook/useResize'
 
 export default function BasicHeader() {
   const { isMobile, isDesktop } = useResize();
+  const pathname = usePathname();
+  //console.log(pathname)\
   return (
     <>
+{isMobile && pathname !== '/' ? (
+    <header>
+      <h1><span className="blind">로고</span> 페이지명</h1>
+      <Link href="/">이전화면</Link>
+      <Link href="/">검색</Link>
+      <Link href="/">장바구니</Link>
+    </header>
+) : (
     <header>
       <div className="header-wrapper">
         <h1>
@@ -14,12 +25,17 @@ export default function BasicHeader() {
         <div className="inner main">
           <div className="main">
             <div className="search">
-              <lable for="globalSearch" className="blind">통합 검색</lable>
+              <label htmlFor="globalSearch" className="blind">통합 검색</label>
               <input type="search" name="globalSearch" id="globalSearch" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
               <button type="button">검색</button>
             </div>
             <div className="util">
-            {isDesktop ? (
+            {isMobile ? (
+              <>
+              <Link href="#">로그인</Link>
+              <Link href="#">장바구니</Link>
+              </>
+            ) : (
               <>
               <Link href="#">로그인</Link>
               <Link href="#">나의 정보</Link>
@@ -28,17 +44,12 @@ export default function BasicHeader() {
               <Link href="#">장바구니</Link>
               <span tabIndex={0}>최근본상품</span>
               </>
-            ) : (
-              <>
-              <Link href="#">로그인</Link>
-              <Link href="#">장바구니</Link>
-              </>
             )}
             </div>
           </div>
         </div>
         <div className="menu">
-          <div tabIndex={0}>전체메뉴</div>
+        {isDesktop && (<div tabIndex={0}>전체메뉴</div>)}
           <ul>
             <li><Link href="#">베스트</Link></li>
             <li><Link href="#">세일</Link></li>
@@ -50,9 +61,20 @@ export default function BasicHeader() {
             <li><Link href="#">카달로그</Link></li>
           </ul>
         </div>
-      {isDesktop && <div tabIndex={0}>항공편검색</div>}
+      {isDesktop && (<div tabIndex={0}>항공편검색</div>)}
       </div>
     </header>
+)}
+
+  {isMobile && (
+    <div className="fixed-toolbar">
+      <div tabIndex={0}>전체메뉴</div>
+      <Link href="#">주류전문관</Link>
+      <Link href="#">홈으로</Link>
+      <Link href="#">마이페이지</Link>
+      <Link href="#">찜</Link>
+    </div>
+  )}
     </>
   )
 }

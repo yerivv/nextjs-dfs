@@ -1,6 +1,9 @@
+
 import '@/public/styles/style.scss'
-import BasicHeader from './component/layout/BasicHeader';
-import BasicFooter from './component/layout/BasicFooter';
+import SkipNavigation from '@/app/component/layout/SkipNavigation';
+import SiteChoice from '@/app/component/common/SiteChoice';
+import BasicHeader from '@/app/component/layout/BasicHeader';
+import BasicFooter from '@/app/component/layout/BasicFooter';
 
 export const metadata = {
   title: {
@@ -17,13 +20,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body>
-        <div className="skip-navigation">
-          <a href="#contents">본문 바로가기</a>
-        </div>
+        <SkipNavigation />
+        <SiteChoice />
         <div id="wrap">
           <BasicHeader />
-          <main className="container">
-            <div id="contents" className="contents">{children}</div>
+          <main id="main-content" tabIndex="-1">
+            <div className="contents">{children}</div>
           </main>
           <BasicFooter />
         </div>

@@ -1,6 +1,6 @@
 import Image from "next/image"
-import ProductItem from "../component/product/ProductItem";
-import BannerItem from "../component/banner/BannerItem";
+import ProductItem from "../../component/product/ProductItem";
+import BannerItem from "../../component/banner/BannerItem";
 
 const fetchBrands = async () => {
   const res = await fetch("http://localhost:9016/brand", {cache: "no-store"});

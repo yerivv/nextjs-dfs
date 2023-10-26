@@ -11,41 +11,41 @@ export default function BasicHeader() {
     <>
 {isMobile && pathname !== '/' ? (
     <header>
-      <h1><span className="blind">로고</span> 페이지명</h1>
-      <Link href="/">이전화면</Link>
-      <Link href="/">검색</Link>
-      <Link href="/">장바구니</Link>
+      <div className="header-wrapper">
+        <h1><span className="blind">대한항공 기내면세점</span> 페이지명</h1>
+        <Link href="/" className="btn back">이전화면</Link>
+        <Link href="/" className="btn search">검색</Link>
+        <Link href="/" className="btn cart">장바구니</Link>
+      </div>
     </header>
 ) : (
     <header>
-      <div className="header-wrapper">
+      <div className="header-wrapper type-1">
         <h1>
           <Link href="/" className="logo">대한항공 기내면세점</Link>
         </h1>
-        <div className="inner main">
-          <div className="main">
-            <div className="search">
-              <label htmlFor="globalSearch" className="blind">통합 검색</label>
-              <input type="search" name="globalSearch" id="globalSearch" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
-              <button type="button">검색</button>
-            </div>
-            <div className="util">
-            {isMobile ? (
-              <>
-              <Link href="#">로그인</Link>
-              <Link href="#">장바구니</Link>
-              </>
-            ) : (
-              <>
-              <Link href="#">로그인</Link>
-              <Link href="#">나의 정보</Link>
-              <span tabIndex={0}>알림</span>
-              <Link href="#">고객센터</Link>
-              <Link href="#">장바구니</Link>
-              <span tabIndex={0}>최근본상품</span>
-              </>
-            )}
-            </div>
+        <div className="main">
+          <div className="search">
+            <label htmlFor="globalSearch" className="blind">통합 검색</label>
+            <input type="search" name="globalSearch" id="globalSearch" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
+            <button type="button">검색</button>
+          </div>
+          <div className="util">
+          {isMobile ? (
+            <>
+            <Link href="#">로그인</Link>
+            <Link href="#">장바구니</Link>
+            </>
+          ) : (
+            <>
+            <Link href="#">로그인</Link>
+            <Link href="#">나의 정보</Link>
+            <span tabIndex={0}>알림</span>
+            <Link href="#">고객센터</Link>
+            <Link href="#">장바구니</Link>
+            <span tabIndex={0}>최근본상품</span>
+            </>
+          )}
           </div>
         </div>
         <div className="menu">
@@ -68,11 +68,23 @@ export default function BasicHeader() {
 
   {isMobile && (
     <div className="fixed-toolbar">
-      <div tabIndex={0}>전체메뉴</div>
-      <Link href="#">주류전문관</Link>
-      <Link href="#">홈으로</Link>
-      <Link href="#">마이페이지</Link>
-      <Link href="#">찜</Link>
+      <ul>
+        <li>
+          <Link href="#"><i className="icon medium menu"></i>메뉴</Link>
+        </li>
+        <li>
+          <Link href="#"><i className="icon medium liquor"></i>주류전문관</Link>
+        </li>
+        <li>
+          <Link href="#"><i className="home"></i><span className="blind">홈으로</span></Link>
+        </li>
+        <li>
+          <Link href="#"><i className="icon medium mypage"></i>마이페이지</Link>
+        </li>
+        <li>
+          <Link href="#"><i className="icon medium wish"></i>찜</Link>
+        </li>
+      </ul>
     </div>
   )}
     </>

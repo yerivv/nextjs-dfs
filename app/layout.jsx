@@ -1,7 +1,6 @@
 
 import '@/public/styles/style.scss'
 import SkipNavigation from '@/app/component/layout/SkipNavigation';
-import SiteChoice from '@/app/component/common/SiteChoice';
 import BasicHeader from '@/app/component/layout/BasicHeader';
 import BasicFooter from '@/app/component/layout/BasicFooter';
 
@@ -21,7 +20,6 @@ export default function RootLayout({ children }) {
     <html lang="ko">
       <body>
         <SkipNavigation />
-        <SiteChoice />
         <div id="wrap">
           <BasicHeader />
           <main id="main-content" tabIndex="-1">

@@ -1,33 +1,86 @@
 header {
-  border-bottom: 1px solid $line-color1;
-  @include tablet {
-    padding: 20px;
-  }
-  @include desktop {
-    padding: 20px 120px;
-  }
-  .logo {
-    display: block;
-    width: 140px;
-    height: 80px;
-    background-color: $primary-color2;
-    background-image: url(/static/images/logo.svg);
-    background-size: auto 63px;
-    background-position: left center;
-    background-repeat: no-repeat;
-    text-indent: -999em;
-    color: #fff;
-    text-align: center;
-    &:focus-visible {
-      outline: 3px solid #000;
+  .header-wrapper {
+    border-bottom: 1px solid $line-color1;
+    @include tablet {
+      padding: 20px;
+    }
+    @include desktop {
+      padding: 20px 120px;
+    }
+    .logo {
+      display: block;
+      width: 140px;
+      height: 80px;
+      background-color: $primary-color2;
+      background-image: url(/static/images/logo.svg);
+      background-size: auto 100%;
+      background-position: left center;
+      background-repeat: no-repeat;
+      text-indent: -999em;
+      color: #fff;
+      text-align: center;
+      &:focus-visible {
+        outline: 3px solid #000;
+      }
+    }
+    &.type-1 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9;
+      width: 100%;
+      border-bottom-width: 0;
+      opacity: 0.8;
+      background-image: linear-gradient(to bottom, #000, rgba(0, 69, 56, 0.2) 103%);
+      .logo {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        height: 28px;
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
+      }
+      .main {
+        padding: 15px;
+      }
     }
   }
-  &.type-1 {
-    opacity: 0.8;
-    background-image: linear-gradient(to bottom, #000, rgba(0, 69, 56, 0.2) 103%);
+}
 
-    .logo {
-      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
+.fixed-toolbar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 9;
+  width: 100%;
+  padding: 8px 10px;
+  border-top: 1px solid $line-color1;
+  background-color: $primary-color2;
+  ul {
+    display: flex;
+    li {
+      width: 25%;
+      a {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+        position: relative;
+        height: 48px;
+        font-size: 11px;
+        text-align: center;
+      }
+      .home {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 1;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-image: linear-gradient(to bottom, #5ba6d2, #267bad);
+        transform: translate(-50%, -50%);
+      }
     }
   }
 }

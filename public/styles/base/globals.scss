@@ -5,10 +5,15 @@ html {
 body {
   overflow-x: hidden;
   background-color: #fff;
+  color: $primary-color1;
   font-family: $font-default-name, serif;
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.25;
+}
+
+img {
+  max-width: 100%;
 }
 
 strong {
@@ -16,6 +21,7 @@ strong {
 }
 
 a {
+  color: $primary-color1;
   text-decoration: none;
 }
 

@@ -9,7 +9,12 @@
   }
   vertical-align: baseline;
 
-  &-small {
+  &.medium {
+    width: 30px;
+    height: 30px;
+  }
+
+  &.small {
     width: 20px;
     height: 20px;
   }
@@ -22,5 +27,17 @@
   }
   &.airplane-w {
     background-image: url($icon-url + 'airplane-w.png');
+  }
+  &.menu {
+    background-image: url($icon-url + 'menu.png');
+  }
+  &.liquor {
+    background-image: url($icon-url + 'liquor.png');
+  }
+  &.mypage {
+    background-image: url($icon-url + 'mypage.png');
+  }
+  &.wish {
+    background-image: url($icon-url + 'wish2.png');
   }
 }

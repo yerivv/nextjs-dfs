@@ -1,11 +1,11 @@
 'use client'
 import { useState } from "react";
 import Image from "next/image";
-import useDesktop from "@/app/hook/useDesktop";
+import useResize from "@/app/hook/useResize";
 import { priceKor, priceEng } from "@/app/utils/format"
 
 const ProductItem = ({ item }) => {
-  const isDesktop = useDesktop();
+  const isDesktop = useResize();
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => {
     setIsHovered(true);

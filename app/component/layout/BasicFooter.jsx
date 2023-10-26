@@ -1,5 +1,3 @@
-import '@/public/styles/layout/footer.scss'
-
 export default function BasicFooter() {
   return (
     <footer>

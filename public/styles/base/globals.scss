@@ -25,6 +25,16 @@ a {
   text-decoration: none;
 }
 
+button {
+  overflow: visible;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: inherit;
+  cursor: pointer
+}
+
 /* 키보드로 포커스 시 */
 button:focus-visible {
   outline: 3px solid #000;

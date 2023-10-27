@@ -8,6 +8,7 @@
     repeat: no-repeat;
   }
   vertical-align: baseline;
+  text-indent: -999em;
 
   &.medium {
     width: 30px;
@@ -39,5 +40,31 @@
   }
   &.wish {
     background-image: url($icon-url + 'wish2.png');
+  }
+  &.back {
+    background-image: url($icon-url + 'back.png');
+  }
+  &.search {
+    background-image: url($icon-url + 'search.png');
+  }
+  &.cart {
+    display: block;
+    position: relative;
+    background-image: url($icon-url + 'cart.png');
+
+    .count {
+      position: absolute;
+      top: 0;
+      right: -4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: $font-color3;
+      color: $primary-color2;
+      font-size: 11px;
+      line-height: 16px;
+      text-indent: 0;
+      text-align: center;
+    }
   }
 }

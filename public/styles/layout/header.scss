@@ -7,6 +7,31 @@ header {
     @include desktop {
       padding: 20px 120px;
     }
+
+    .sub {
+      display: flex;
+      align-items: center;
+      gap: 0 12px;
+      padding: 12px 20px;
+      background-color: #fff;
+      h1 {
+        order: 2;
+        width: calc(100% - 126px);
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .btn-back {
+        order: 1;
+      }
+      .btn-search {
+        order: 3;
+        margin-left: auto;
+      }
+      .btn-cart {
+        order: 4;
+      }
+    }
     .logo {
       display: block;
       width: 140px;
@@ -46,7 +71,7 @@ header {
   }
 }
 
-.fixed-toolbar {
+.action-bar {
   position: fixed;
   left: 0;
   bottom: 0;

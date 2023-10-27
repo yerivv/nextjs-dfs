@@ -30,6 +30,16 @@
   margin: 0 auto;
 }
 
+@mixin blind {
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
 @mixin line-clamp1 {
   display: -webkit-box;
   overflow: hidden;

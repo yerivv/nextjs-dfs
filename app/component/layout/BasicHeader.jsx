@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 import useResize from '@/app/hook/useResize'
+import ActionBar from './ActionBar';
+import HistoryBack from '../button/HistoryBack';
 
 export default function BasicHeader() {
   const { isMobile, isDesktop } = useResize();
@@ -12,10 +14,16 @@ export default function BasicHeader() {
 {isMobile && pathname !== '/' ? (
     <header>
       <div className="header-wrapper">
-        <h1><span className="blind">대한항공 기내면세점</span> 페이지명</h1>
-        <Link href="/" className="btn back">이전화면</Link>
-        <Link href="/" className="btn search">검색</Link>
-        <Link href="/" className="btn cart">장바구니</Link>
+        <div className="sub">
+          <h1><span className="blind">대한항공 기내면세점</span> 페이지명</h1>
+          <HistoryBack />
+          <div className="btn-search">
+            <Link href="/" className="icon medium search">검색</Link>
+          </div>
+          <div className="btn-cart">
+            <Link href="/" className="icon medium cart">장바구니<span className="count">0</span></Link>
+          </div>
+        </div>
       </div>
     </header>
 ) : (
@@ -66,27 +74,7 @@ export default function BasicHeader() {
     </header>
 )}
 
-  {isMobile && (
-    <div className="fixed-toolbar">
-      <ul>
-        <li>
-          <Link href="#"><i className="icon medium menu"></i>메뉴</Link>
-        </li>
-        <li>
-          <Link href="#"><i className="icon medium liquor"></i>주류전문관</Link>
-        </li>
-        <li>
-          <Link href="#"><i className="home"></i><span className="blind">홈으로</span></Link>
-        </li>
-        <li>
-          <Link href="#"><i className="icon medium mypage"></i>마이페이지</Link>
-        </li>
-        <li>
-          <Link href="#"><i className="icon medium wish"></i>찜</Link>
-        </li>
-      </ul>
-    </div>
-  )}
+{isMobile && <ActionBar />}
     </>
   )
 }

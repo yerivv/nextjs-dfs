@@ -1,59 +1,65 @@
 .icon {
   @include icon-box(40px, 40px);
-
   &.medium {
     @include icon-box(30px, 30px);
   }
-
   &.small {
-    @include icon-box(20px, 20px);
+    @include icon-box(24px, 24px);
   }
   
+  .count {
+    position: absolute;
+    top: 0;
+    right: -4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $font-color3;
+    color: $primary-color2;
+    font-size: 11px;
+    line-height: 16px;
+    text-indent: 0;
+    text-align: center;
+  }
+
   &.cs-w {
-    background-image: url($icon-url + 'cs-w.png');
+    background-image: url(#{$icon-url}cs-w.png);
   }
   &.gift-w {
-    background-image: url($icon-url + 'gift-w.png');
+    background-image: url(#{$icon-url}gift-w.png);
   }
   &.airplane-w {
-    background-image: url($icon-url + 'airplane-w.png');
+    background-image: url(#{$icon-url}airplane-w.png);
   }
   &.menu {
-    background-image: url($icon-url + 'menu.png');
+    background-image: url(#{$icon-url}menu.png);
   }
   &.liquor {
-    background-image: url($icon-url + 'liquor.png');
+    background-image: url(#{$icon-url}liquor.png);
   }
   &.mypage {
-    background-image: url($icon-url + 'mypage.png');
+    background-image: url(#{$icon-url}mypage.png);
   }
   &.wish {
-    background-image: url($icon-url + 'wish2.png');
+    background-image: url(#{$icon-url}wish2.png);
   }
   &.back {
-    background-image: url($icon-url + 'back.png');
+    background-image: url(#{$icon-url}back.png);
   }
   &.search {
-    background-image: url($icon-url + 'search.png');
+    background-image: url(#{$icon-url}search.png);
+  }
+  &.search-w {
+    background-image: url(#{$icon-url}search-w.png);
   }
   &.cart {
     display: block;
     position: relative;
-    background-image: url($icon-url + 'cart.png');
-
-    .count {
-      position: absolute;
-      top: 0;
-      right: -4px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background-color: $font-color3;
-      color: $primary-color2;
-      font-size: 11px;
-      line-height: 16px;
-      text-indent: 0;
-      text-align: center;
-    }
+    background-image: url(#{$icon-url}cart.png);
+  }
+  &.cart-w {
+    display: block;
+    position: relative;
+    background-image: url(#{$icon-url}cart-w.png);
   }
 }

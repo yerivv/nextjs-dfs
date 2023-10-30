@@ -8,7 +8,11 @@ import HistoryBack from '../button/HistoryBack';
 export default function BasicHeader() {
   const { isMobile, isDesktop } = useResize();
   const pathname = usePathname();
-  //console.log(pathname)\
+
+  let headerType = 'default';
+  if(pathname === '/') {
+    headerType = 'type-1'
+  }
   return (
     <>
 {isMobile && pathname !== '/' ? (
@@ -27,22 +31,21 @@ export default function BasicHeader() {
       </div>
     </header>
 ) : (
-    <header>
-      <div className="header-wrapper type-1">
-        <h1>
-          <Link href="/" className="logo">대한항공 기내면세점</Link>
-        </h1>
+    <header className={headerType}>
+      <div className="header-wrapper">
         <div className="main">
+          <h1>
+            <Link href="/" className="logo">대한항공 기내면세점</Link>
+          </h1>
           <div className="search">
             <label htmlFor="globalSearch" className="blind">통합 검색</label>
             <input type="search" name="globalSearch" id="globalSearch" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
-            <button type="button">검색</button>
+            <button type="button"><span className="icon small search-w">검색</span></button>
           </div>
           <div className="util">
           {isMobile ? (
             <>
-            <Link href="#">로그인</Link>
-            <Link href="#">장바구니</Link>
+            <Link href="/" className="icon small cart-w">장바구니<span className="count">0</span></Link>
             </>
           ) : (
             <>
@@ -58,16 +61,18 @@ export default function BasicHeader() {
         </div>
         <div className="menu">
         {isDesktop && (<div tabIndex={0}>전체메뉴</div>)}
-          <ul>
-            <li><Link href="#">베스트</Link></li>
-            <li><Link href="#">세일</Link></li>
-            <li><Link href="#">선물하기</Link></li>
-            <li><Link href="#">주류전문관</Link></li>
-            <li><Link href="#">스토리</Link></li>
-            <li><Link href="#">이벤트</Link></li>
-            <li><Link href="#">혜택</Link></li>
-            <li><Link href="#">카달로그</Link></li>
-          </ul>
+          <div className="gnb">
+            <ul>
+              <li><Link href="#">베스트</Link></li>
+              <li><Link href="#">세일</Link></li>
+              <li><Link href="#">선물하기</Link></li>
+              <li><Link href="#">주류전문관</Link></li>
+              <li><Link href="#">스토리</Link></li>
+              <li><Link href="#">이벤트</Link></li>
+              <li><Link href="#">혜택</Link></li>
+              <li><Link href="#">카달로그</Link></li>
+            </ul>
+          </div>
         </div>
       {isDesktop && (<div tabIndex={0}>항공편검색</div>)}
       </div>

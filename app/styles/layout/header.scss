@@ -1,11 +1,115 @@
 header {
+  min-height: 56px;
+  @include tablet-desktop {
+    min-height: 181px;
+  }
+  // 기본 상단
   .header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
     border-bottom: 1px solid $line-color1;
+    background-color: $primary-color2;
     @include tablet {
       padding: 20px;
     }
     @include desktop {
       padding: 20px 120px;
+    }
+
+    .main {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+      min-height: 43px;
+      padding: 15px 15px 0;
+      @include tablet-desktop {
+        height: 80px;
+        padding: 20px 0 10px;
+      }
+      h1 {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        margin-right: auto;
+        @include tablet {
+          top: 29px;
+          left: 20px
+        }
+        @include desktop {
+          top: 29px;
+          left: 120px
+        }
+
+        .logo {
+          display: block;
+          width: 64px;
+          height: 28px;
+          background: {
+            image: url(/static/images/logo.svg);
+            size: auto 100%;
+            position: left center;
+            repeat: no-repeat;
+          };
+          text-indent: -999em;
+          color: #fff;
+          text-align: center;
+          &:focus-visible {
+            outline: 3px solid #000;
+          }
+          @include tablet-desktop {
+            width: 140px;
+            height: 62px;
+          }
+        }
+      }
+      .search {
+        position: absolute;
+        top: 17px;
+        right: 54px;
+
+        input {
+          width: 0;
+          height: 0;
+          opacity: 0;
+        }
+      }
+    }
+
+    .menu {
+      overflow: hidden;
+      height: 44px;
+      @include tablet-desktop {
+        display: flex;
+        align-items: center;
+        height: auto;
+      }
+      .gnb {
+        display: inline-block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      ul {
+        display: flex;
+        flex: 1 1 auto;
+        width: 100%;
+        height: 80px;
+        white-space: nowrap;
+        @include tablet-desktop {
+          height: auto;
+        }
+        a {
+          display: block;
+          padding: 10px 15px;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 24px;
+        }
+      }
     }
 
     .sub {
@@ -32,43 +136,30 @@ header {
         order: 4;
       }
     }
-    .logo {
-      display: block;
-      width: 140px;
-      height: 80px;
-      background-color: $primary-color2;
-      background-image: url(/static/images/logo.svg);
-      background-size: auto 100%;
-      background-position: left center;
-      background-repeat: no-repeat;
-      text-indent: -999em;
-      color: #fff;
-      text-align: center;
-      &:focus-visible {
-        outline: 3px solid #000;
-      }
-    }
-    &.type-1 {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 9;
-      width: 100%;
-      border-bottom-width: 0;
+  }
+  
+  //메인 노출
+  &.type-1 {
+    min-height: auto;
+    .header-wrapper {
       opacity: 0.8;
+      border-bottom-width: 0;
+      background-color: transparent;
       background-image: linear-gradient(to bottom, #000, rgba(0, 69, 56, 0.2) 103%);
-      .logo {
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        height: 28px;
-        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
-      }
-      .main {
-        padding: 15px;
+    }
+    .logo {
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
+    }
+
+    .menu {
+      ul {
+        a {
+          color: $primary-color2;
+        }
       }
     }
   }
+
 }
 
 .action-bar {

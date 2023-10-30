@@ -1,12 +1,12 @@
-@import '@/public/styles/base/reset.scss';
-@import '@/public/styles/base/typography.scss';
-@import '@/public/styles/base/globals.scss';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/globals';
 
-@import '@/public/styles/layout/header.scss';
-@import '@/public/styles/layout/footer.scss';
+@import 'layout/header';
+@import 'layout/footer';
 
-@import '@/public/styles/components/icon.scss';
-@import '@/public/styles/components/product.scss';
+@import 'components/icon';
+@import 'components/product';
 
-@import '@/public/styles/pages/pages.scss';
-@import '@/public/styles/pages/loading.scss';
+@import 'pages/pages';
+@import 'pages/loading';

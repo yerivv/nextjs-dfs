@@ -1,23 +1,12 @@
 .icon {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  background: {
-    size: contain;
-    position: center;
-    repeat: no-repeat;
-  }
-  vertical-align: baseline;
-  text-indent: -999em;
+  @include icon-box(40px, 40px);
 
   &.medium {
-    width: 30px;
-    height: 30px;
+    @include icon-box(30px, 30px);
   }
 
   &.small {
-    width: 20px;
-    height: 20px;
+    @include icon-box(20px, 20px);
   }
   
   &.cs-w {

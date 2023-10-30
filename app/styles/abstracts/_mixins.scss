@@ -40,20 +40,27 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-@mixin line-clamp1 {
+//말줄임표 믹스인 ($row => 줄 수)
+//ex. 2줄 말줄임 사용시 @include line-clamp(2)
+@mixin line-clamp($row) {
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: $row;
   -webkit-box-orient: vertical;
 }
 
-@mixin line-clamp2 {
-  display: -webkit-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+@mixin icon-box($width, $height) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+  background: {
+    size: contain;
+    position: center;
+    repeat: no-repeat;
+  }
+  vertical-align: baseline;
+  text-indent: -999em;
 }
 
 @mixin jinair-back {

@@ -1,5 +1,5 @@
 
-import '@/public/styles/style.scss'
+import '@/app/styles/style.scss'
 import SkipNavigation from '@/app/component/layout/SkipNavigation';
 import BasicHeader from '@/app/component/layout/BasicHeader';
 import BasicFooter from '@/app/component/layout/BasicFooter';

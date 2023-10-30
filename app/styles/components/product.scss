@@ -232,7 +232,7 @@
     }
     .name {
       margin-bottom: 15px;
-      @include line-clamp1;
+      @include line-clamp(1);
       font-size: 1.5rem;
       font-weight: 700;
       @include desktop {

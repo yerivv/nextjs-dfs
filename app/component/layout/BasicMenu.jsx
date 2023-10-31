@@ -1,5 +1,7 @@
-export default function BasicMenu() {
+const BasicMenu = () => {
   return (
-    <div>공통 메뉴 오픈</div>
+    <div className="menu-wrapper">공통 메뉴 오픈</div>
   )
 }
+
+export default BasicMenu;

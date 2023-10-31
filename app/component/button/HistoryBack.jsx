@@ -27,7 +27,7 @@ const HistoryBack = () => {
 
   return (
     <div className="btn-back">
-      <button onClick={handleBtnBack} className="icon medium back">이전화면</button>
+      <button onClick={handleBtnBack} className="icon medium h-back">이전화면</button>
     </div>
   )
 }

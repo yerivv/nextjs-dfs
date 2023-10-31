@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^13.4.19",
+    "@svgr/webpack": "^8.1.0",
     "axios": "^1.5.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "json-server": "^0.17.4",

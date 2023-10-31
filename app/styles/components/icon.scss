@@ -6,7 +6,68 @@
   &.small {
     @include icon-box(24px, 24px);
   }
-  
+
+  &.white {
+    filter: invert(100%) sepia(0%) saturate(7474%) hue-rotate(132deg) brightness(107%) contrast(99%);
+  }
+
+  //header
+  &.h-cart {
+    background-image: url($icon-url+'layout/cart.png');
+  }
+  &.h-cart-m {
+    background-image: url($icon-url+'layout/cart-mo.png');
+  }
+  &.h-search {
+    background-image: url($icon-url+'layout/search.png');
+  }
+  &.h-search-m {
+    background-image: url($icon-url+'layout/search-mo.png');
+  }
+  &.h-back {
+    background-image: url($icon-url+'layout/back.png');
+  }
+  &.h-login {
+    background-image: url($icon-url+'layout/login.png');
+  }
+  &.h-my {
+    background-image: url($icon-url+'layout/myinfo.png');
+  }
+  &.h-notify {
+    background-image: url($icon-url+'layout/notify.png');
+  }
+  &.h-cs {
+    background-image: url($icon-url+'layout/cs.png');
+  }
+
+  //footer
+  &.cs-w {
+    background-image: url($icon-url+'cs-w.png');
+  }
+  &.gift-w {
+    background-image: url($icon-url+'gift-w.png');
+  }
+  &.airplane-w {
+    background-image: url($icon-url+'airplane-w.png');
+  }
+
+  //action bar
+  &.menu {
+    background-image: url($icon-url+'menu.png');
+  }
+  &.liquor {
+    background-image: url($icon-url+'liquor.png');
+  }
+  &.mypage {
+    background-image: url($icon-url+'mypage.png');
+  }
+  &.wish {
+    background-image: url($icon-url+'wish2.png');
+  }
+}
+
+.count-box {
+  position: relative;
   .count {
     position: absolute;
     top: 0;
@@ -20,46 +81,5 @@
     line-height: 16px;
     text-indent: 0;
     text-align: center;
-  }
-
-  &.cs-w {
-    background-image: url(#{$icon-url}cs-w.png);
-  }
-  &.gift-w {
-    background-image: url(#{$icon-url}gift-w.png);
-  }
-  &.airplane-w {
-    background-image: url(#{$icon-url}airplane-w.png);
-  }
-  &.menu {
-    background-image: url(#{$icon-url}menu.png);
-  }
-  &.liquor {
-    background-image: url(#{$icon-url}liquor.png);
-  }
-  &.mypage {
-    background-image: url(#{$icon-url}mypage.png);
-  }
-  &.wish {
-    background-image: url(#{$icon-url}wish2.png);
-  }
-  &.back {
-    background-image: url(#{$icon-url}back.png);
-  }
-  &.search {
-    background-image: url(#{$icon-url}search.png);
-  }
-  &.search-w {
-    background-image: url(#{$icon-url}search-w.png);
-  }
-  &.cart {
-    display: block;
-    position: relative;
-    background-image: url(#{$icon-url}cart.png);
-  }
-  &.cart-w {
-    display: block;
-    position: relative;
-    background-image: url(#{$icon-url}cart-w.png);
   }
 }

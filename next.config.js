@@ -10,6 +10,13 @@ const nextConfig = {
       @import "@/app/styles/abstracts/_mixins.scss";
     `, // prependData 옵션 추가
   },
+  webpack : (config) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"]
+    });
+    return config;
+  }
 }
 
 module.exports = nextConfig

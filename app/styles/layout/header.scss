@@ -1,7 +1,7 @@
 header {
   min-height: 56px;
-  @include tablet-desktop {
-    min-height: 181px;
+  @include desktop {
+    min-height: 180px;
   }
   // 기본 상단
   .header-wrapper {
@@ -12,13 +12,9 @@ header {
     width: 100%;
     border-bottom: 1px solid $line-color1;
     background-color: $primary-color2;
-    @include tablet {
-      padding: 20px;
-    }
     @include desktop {
-      padding: 20px 120px;
+      padding: 0 120px;
     }
-
     .main {
       display: flex;
       justify-content: flex-end;
@@ -26,97 +22,175 @@ header {
       position: relative;
       min-height: 43px;
       padding: 15px 15px 0;
-      @include tablet-desktop {
-        height: 80px;
-        padding: 20px 0 10px;
+      @include desktop {
+        height: 100px;
+        padding: 20px 0 0;
       }
       h1 {
         position: fixed;
         top: 15px;
         left: 15px;
         margin-right: auto;
-        @include tablet {
-          top: 29px;
-          left: 20px
-        }
         @include desktop {
           top: 29px;
           left: 120px
         }
-
         .logo {
           display: block;
           width: 64px;
           height: 28px;
-          background: {
-            image: url(/static/images/logo.svg);
-            size: auto 100%;
-            position: left center;
-            repeat: no-repeat;
-          };
-          text-indent: -999em;
-          color: #fff;
-          text-align: center;
           &:focus-visible {
             outline: 3px solid #000;
           }
-          @include tablet-desktop {
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+          @include desktop {
             width: 140px;
             height: 62px;
           }
         }
       }
-      .search {
-        position: absolute;
-        top: 17px;
-        right: 54px;
-
-        input {
-          width: 0;
-          height: 0;
-          opacity: 0;
+      @include desktop {
+        .util {
+          display: flex;
+          gap: 0 10px;
+          .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 40px;
+            height: 80px;
+            border-radius: 10px;
+            border: 1px solid transparent;
+            text-align: center;
+            .icon, .thumb {
+              margin: 4px auto;
+            }
+            .thumb {
+              overflow: hidden;
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              border: 1px solid $line-color1;
+              background-color: $primary-color2;
+            }
+            .text {
+              display: none;
+              width: 80%;
+              height: 40px;
+              margin: 0 auto;
+              font: {
+                size: 12px;
+                weight: 700;
+              }
+            }
+            .count {
+              top:50%;
+              right: 2px;
+              margin-top: -16px;
+            }
+            &.hover {
+              justify-content: flex-end;
+              .text {
+                display: inline-flex;
+                align-items: center;
+              }
+              .count {
+                top:2px;
+                margin-top: 0;
+              }
+            }
+          }
         }
+      }
+    }
+
+    .search {
+      position: absolute;
+      top: 14px;
+      right: 54px;
+      input {
+        width: 0;
+        height: 0;
+        opacity: 0;
+      }
+      @include desktop {
+        right: auto;
+        left: 150px;
       }
     }
 
     .menu {
       overflow: hidden;
       height: 44px;
-      @include tablet-desktop {
+      @include desktop {
         display: flex;
         align-items: center;
         height: auto;
+        min-height: 80px;
+      }
+      .all {
+        width: 50px;
       }
       .gnb {
         display: inline-block;
         overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-      ul {
-        display: flex;
-        flex: 1 1 auto;
-        width: 100%;
         height: 80px;
         white-space: nowrap;
-        @include tablet-desktop {
+        @include desktop {
+          display: block;
+          width: calc(100% - 300px);
           height: auto;
         }
-        a {
-          display: block;
-          padding: 10px 15px;
-          font-size: 18px;
-          font-weight: 500;
-          line-height: 24px;
+        ul {
+          display: flex;
+          white-space: nowrap;
+          @include desktop {
+            height: auto;
+
+            li.active {
+              border-bottom: 3px solid #000;
+            }
+          }
+          a {
+            display: block;
+            padding: 10px 15px;
+            font: {
+              size: 18px;
+              weight: 500;
+            }
+            &:hover,
+            &:focus-visible {
+              outline: 0;
+              text-decoration: underline;
+            }
+            line-height: 24px;
+            @include desktop {
+              height: auto;
+              padding: 25px;
+              font: {
+                size: 20px;
+                weight: 400;
+              }
+              line-height: 30px;
+            }
+          }
         }
+      }
+      .other {
+        width: 250px;
+        margin-left: auto;
+        text-align: right;
       }
     }
 
     .sub {
       display: flex;
       align-items: center;
-      gap: 0 12px;
-      padding: 12px 20px;
+      gap: 0 6px;
+      padding: 13px 10px;
       background-color: #fff;
       h1 {
         order: 2;
@@ -131,6 +205,10 @@ header {
       .btn-search {
         order: 3;
         margin-left: auto;
+        .search {
+          top: 13px;
+          right: 50px;
+        }
       }
       .btn-cart {
         order: 4;
@@ -147,12 +225,20 @@ header {
       background-color: transparent;
       background-image: linear-gradient(to bottom, #000, rgba(0, 69, 56, 0.2) 103%);
     }
-    .logo {
-      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
+
+    .main {
+      @include desktop {
+        .util {
+          .box.hover {
+            border-color: rgba(112, 112, 112, 0.15);
+            background-color: #fff;
+          }
+        }
+      }
     }
 
     .menu {
-      ul {
+      .gnb {
         a {
           color: $primary-color2;
         }
@@ -160,6 +246,10 @@ header {
     }
   }
 
+}
+
+.menu-wrapper {
+  display: none;
 }
 
 .action-bar {

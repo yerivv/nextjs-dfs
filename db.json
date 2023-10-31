@@ -1558,5 +1558,117 @@
         "content": "https://new-tstskyshop.koreanairdfs.com/media/test/20220227182312020540.jpg"
       }
     ]
-  }
+  },
+  "gnbMenu": [
+    {
+      "displayTextSize": "L",
+      "menuNameEng": "BEST",
+      "menuUrl": null,
+      "displayTextWidth": "R",
+      "displaySeqNo": 1,
+      "menuName": "베스트",
+      "displayTextColor": "B",
+      "menuUseYn": "Y"
+    },
+    {
+      "displayTextSize": "L",
+      "menuNameEng": "SALE",
+      "menuUrl": null,
+      "displayTextWidth": "R",
+      "displaySeqNo": 2,
+      "menuName": "세일",
+      "displayTextColor": "R",
+      "menuUseYn": "Y"
+    },
+    {
+      "displayTextSize": "S",
+      "menuNameEng": "EXHIBITION",
+      "menuUrl": null,
+      "displayTextWidth": "R",
+      "displaySeqNo": 3,
+      "menuName": "기획전",
+      "displayTextColor": "B",
+      "menuUseYn": "Y"
+    },
+    {
+      "displayTextSize": "L",
+      "menuNameEng": "LIQUOR",
+      "menuUrl": null,
+      "displayTextWidth": "B",
+      "displaySeqNo": 4,
+      "menuName": "주류전문관",
+      "displayTextColor": "J",
+      "menuUseYn": "Y"
+    },
+    {
+      "displayTextSize": "S",
+      "menuNameEng": "STORY",
+      "menuUrl": null,
+      "displayTextWidth": "R",
+      "displaySeqNo": 5,
+      "menuName": "스토리",
+      "displayTextColor": "N",
+      "menuUseYn": "Y"
+    },
+    {
+      "displayTextSize": "L",
+      "menuNameEng": "EVENT",
+      "menuUrl": null,
+      "displayTextWidth": "R",
+      "displaySeqNo": 6,
+      "menuName": "이벤트",
+      "displayTextColor": "B",
+      "menuUseYn": "Y"
+    },
+    {
+      "displayTextSize": "S",
+      "menuNameEng": "BENEFITS",
+      "menuUrl": null,
+      "displayTextWidth": "R",
+      "displaySeqNo": 7,
+      "menuName": "혜택",
+      "displayTextColor": "N",
+      "menuUseYn": "Y"
+    },
+    {
+      "displayTextSize": "S",
+      "menuNameEng": "e-catalog",
+      "menuUrl": "https://new-tstskyshop.koreanairdfs.com/e-catalog",
+      "displayTextWidth": "B",
+      "displaySeqNo": 8,
+      "menuName": "카탈로그",
+      "displayTextColor": "B",
+      "menuUseYn": "Y"
+    },
+    {
+      "displayTextSize": "L",
+      "menuNameEng": "addEvent",
+      "menuUrl": "https://new-tstskyshop.koreanairdfs.com/products/S20016F0",
+      "displayTextWidth": "B",
+      "displaySeqNo": 9,
+      "menuName": "GNB",
+      "displayTextColor": "N",
+      "menuUseYn": "Y"
+    },
+    {
+      "displayTextSize": "L",
+      "menuNameEng": "Summer Event!",
+      "menuUrl": "https://new-tstskyshop.koreanairdfs.com/products/S12118F0",
+      "displayTextWidth": "B",
+      "displaySeqNo": 10,
+      "menuName": "와! 6월이다~",
+      "displayTextColor": "N",
+      "menuUseYn": "Y"
+    },
+    {
+      "displayTextSize": "S",
+      "menuNameEng": "GENERAL",
+      "menuUrl": null,
+      "displayTextWidth": "R",
+      "displaySeqNo": 11,
+      "menuName": "배송상품",
+      "displayTextColor": "N",
+      "menuUseYn": "Y"
+    }
+  ]
 }

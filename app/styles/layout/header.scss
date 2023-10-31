@@ -3,227 +3,284 @@ header {
   @include desktop {
     min-height: 180px;
   }
-  // 기본 상단
+
   .header-wrapper {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9;
     width: 100%;
-    border-bottom: 1px solid $line-color1;
     background-color: $primary-color2;
     @include desktop {
+      padding: 0 50px;
+    }
+    @media (min-width: '1540px') {
       padding: 0 120px;
     }
-    .main {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      position: relative;
-      min-height: 43px;
-      padding: 15px 15px 0;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $line-color1;
+    }
+  }
+
+  .main {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    min-height: 43px;
+    padding: 15px 15px 0;
+    @include desktop {
+      height: 100px;
+      padding: 20px 0 0;
+    }
+    h1 {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      margin-right: auto;
       @include desktop {
-        height: 100px;
-        padding: 20px 0 0;
+        top: 29px;
+        left: 50px
       }
-      h1 {
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        margin-right: auto;
+      @media (min-width: '1540px') {
+        top: 29px;
+        left: 120px
+      }
+      .logo {
+        display: block;
+        width: 64px;
+        height: 28px;
+        &:focus-visible {
+          outline: 3px solid #000;
+        }
+        svg {
+          width: 100%;
+          height: 100%;
+        }
         @include desktop {
-          top: 29px;
-          left: 120px
-        }
-        .logo {
-          display: block;
-          width: 64px;
-          height: 28px;
-          &:focus-visible {
-            outline: 3px solid #000;
-          }
-          svg {
-            width: 100%;
-            height: 100%;
-          }
-          @include desktop {
-            width: 140px;
-            height: 62px;
-          }
+          width: 140px;
+          height: 62px;
         }
       }
-      @include desktop {
-        .util {
+    }
+    @include desktop {
+      .util {
+        display: flex;
+        gap: 0 10px;
+        .box {
           display: flex;
-          gap: 0 10px;
-          .box {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 40px;
-            height: 80px;
-            border-radius: 10px;
-            border: 1px solid transparent;
-            text-align: center;
-            .icon, .thumb {
-              margin: 4px auto;
+          flex-direction: column;
+          justify-content: center;
+          width: 40px;
+          height: 80px;
+          border-radius: 10px;
+          border: 1px solid transparent;
+          text-align: center;
+          .icon, .thumb {
+            margin: 4px auto;
+          }
+          .thumb {
+            overflow: hidden;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid $line-color1;
+            background-color: $primary-color2;
+          }
+          .text {
+            display: none;
+            width: 80%;
+            height: 40px;
+            margin: 0 auto;
+            font: {
+              size: 12px;
+              weight: 700;
             }
-            .thumb {
-              overflow: hidden;
-              width: 30px;
-              height: 30px;
-              border-radius: 50%;
-              border: 1px solid $line-color1;
-              background-color: $primary-color2;
-            }
+          }
+          .count {
+            top:50%;
+            right: 2px;
+            margin-top: -16px;
+          }
+          &.hover {
+            justify-content: flex-end;
             .text {
-              display: none;
-              width: 80%;
-              height: 40px;
-              margin: 0 auto;
-              font: {
-                size: 12px;
-                weight: 700;
-              }
+              display: inline-flex;
+              align-items: center;
             }
             .count {
-              top:50%;
-              right: 2px;
-              margin-top: -16px;
-            }
-            &.hover {
-              justify-content: flex-end;
-              .text {
-                display: inline-flex;
-                align-items: center;
-              }
-              .count {
-                top:2px;
-                margin-top: 0;
-              }
+              top:2px;
+              margin-top: 0;
             }
           }
         }
       }
     }
+  }
 
-    .search {
-      position: absolute;
-      top: 14px;
-      right: 54px;
-      input {
-        width: 0;
-        height: 0;
-        opacity: 0;
-      }
-      @include desktop {
-        right: auto;
-        left: 150px;
-      }
+  .search {
+    position: absolute;
+    top: 14px;
+    right: 54px;
+    input {
+      width: 0;
+      height: 0;
+      opacity: 0;
     }
-
-    .menu {
-      overflow: hidden;
-      height: 44px;
-      @include desktop {
-        display: flex;
-        align-items: center;
-        height: auto;
-        min-height: 80px;
-      }
-      .all {
-        width: 50px;
-      }
-      .gnb {
-        display: inline-block;
-        overflow-x: auto;
-        height: 80px;
-        white-space: nowrap;
-        @include desktop {
-          display: block;
-          width: calc(100% - 300px);
-          height: auto;
-        }
-        ul {
-          display: flex;
-          white-space: nowrap;
-          @include desktop {
-            height: auto;
-
-            li.active {
-              border-bottom: 3px solid #000;
-            }
-          }
-          a {
-            display: block;
-            padding: 10px 15px;
-            font: {
-              size: 18px;
-              weight: 500;
-            }
-            &:hover,
-            &:focus-visible {
-              outline: 0;
-              text-decoration: underline;
-            }
-            line-height: 24px;
-            @include desktop {
-              height: auto;
-              padding: 25px;
-              font: {
-                size: 20px;
-                weight: 400;
-              }
-              line-height: 30px;
-            }
-          }
-        }
-      }
-      .other {
-        width: 250px;
-        margin-left: auto;
-        text-align: right;
-      }
+    @include desktop {
+      right: auto;
+      left: 150px;
     }
+  }
 
-    .sub {
+  .menu {
+    overflow: hidden;
+    height: 44px;
+    @include desktop {
       display: flex;
       align-items: center;
-      gap: 0 6px;
-      padding: 13px 10px;
-      background-color: #fff;
-      h1 {
-        order: 2;
-        width: calc(100% - 126px);
-        font-size: 20px;
-        font-weight: 700;
-        text-align: center;
+      height: auto;
+      min-height: 80px;
+    }
+    .all {
+      width: 80px;
+      .btn-menu {
+        display: block;
+        height: 80px;
+        text-align: left;
       }
-      .btn-back {
-        order: 1;
+    }
+    .gnb {
+      display: inline-block;
+      overflow-x: auto;
+      height: 80px;
+      white-space: nowrap;
+      @include desktop {
+        display: block;
+        width: calc(100% - 386px - 80px);
+        height: auto;
       }
-      .btn-search {
-        order: 3;
-        margin-left: auto;
-        .search {
-          top: 13px;
-          right: 50px;
+      ul {
+        display: flex;
+        white-space: nowrap;
+        @include desktop {
+          height: auto;
+        }
+        .box {
+          display: block;
+          padding: 0 15px;
+          font: {
+            size: 18px;
+            weight: 500;
+          }
+          line-height: 24px;
+          &:hover,
+          &:focus-visible {
+            outline: 0;
+            text-decoration: underline;
+          }
+          .text {
+            display: block;
+            padding: 10px 0;
+          }
+          @include desktop {
+            height: auto;
+            padding: 0 25px;
+            font: {
+              size: 20px;
+              weight: 400;
+            }
+            line-height: 30px;
+            .text {
+              display: block;
+              padding: 25px 0;
+            }
+          }
+        }
+        .active .box .text {
+          padding-bottom: 22px;
+          border-bottom: 3px solid #000;
         }
       }
-      .btn-cart {
-        order: 4;
+    }
+    .other {
+      width: 386px;
+      margin-left: auto;
+      text-align: right;
+
+      .btn-airplane {
+        display: inline-flex;
+        position: relative;
+        width: 242px;
+        height: 42px;
+        padding: 12px 20px;
+        margin-right: 26px;
+        border-radius: 21px;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.16);
+        border: 1px solid #5b6768;
+        background-color: #f7f7f7;
+        .icon {
+          position: absolute;
+          top: 50%;
+          right: -26px;
+          overflow: hidden;
+          width: 60px;
+          height: 60px;
+          margin-top: -30px;
+          border-radius: 50%;
+          border: 1px solid #0a204b;
+          background-color: #fff;
+        }
       }
+    }
+  }
+
+  .sub {
+    display: flex;
+    align-items: center;
+    gap: 0 6px;
+    padding: 13px 10px;
+    background-color: #fff;
+    h1 {
+      order: 2;
+      width: calc(100% - 126px);
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .btn-back {
+      order: 1;
+    }
+    .btn-search {
+      order: 3;
+      margin-left: auto;
+      .search {
+        top: 13px;
+        right: 50px;
+      }
+    }
+    .btn-cart {
+      order: 4;
     }
   }
   
   //메인 노출
   &.type-1 {
     min-height: auto;
+
     .header-wrapper {
       opacity: 0.8;
-      border-bottom-width: 0;
       background-color: transparent;
       background-image: linear-gradient(to bottom, #000, rgba(0, 69, 56, 0.2) 103%);
+      &::before {
+        background-color: transparent;
+      }
     }
 
     .main {
@@ -239,8 +296,11 @@ header {
 
     .menu {
       .gnb {
-        a {
+        .box {
           color: $primary-color2;
+        }
+        .active .box .text {
+          border-color: $primary-color2;
         }
       }
     }

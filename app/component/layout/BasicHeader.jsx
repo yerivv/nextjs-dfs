@@ -1,5 +1,6 @@
-import React from 'react';
+'use client'
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import useResize from '@/app/hook/useResize';
 import ActionBar from './ActionBar';
@@ -58,14 +59,17 @@ const BasicHeader = () => {
         <div className="menu">
         {isDesktop && (
           <div className="all">
-            <Link href="#"><i>전체메뉴</i></Link>
+            <Link href="#" className="btn-menu"><i className={`icon medium menu ${color}`}>전체메뉴</i></Link>
           </div>
         )}
           <GnbMenu />
         {isDesktop && (
           <div className="other">
             <Link href="#">임직원몰</Link>
-            <Link href="#">항공편검색</Link>
+            <Link href="#" className="btn-airplane">
+              <span>고객님이 탑승하는 노선 선택</span>
+              <Image src={`/static/images/icon/img-airplane.png`} width={60} height={60} className="icon" alt="대한항공" />
+            </Link>
           </div>
         )}
         </div>

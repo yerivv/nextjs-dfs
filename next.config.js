@@ -16,7 +16,8 @@ const nextConfig = {
       use: ["@svgr/webpack"]
     });
     return config;
-  }
+  },
+  reactStrictMode: false // // 요 부분을 false로 변경 (콘솔 2개씩 보이는 부분)
 }
 
 module.exports = nextConfig

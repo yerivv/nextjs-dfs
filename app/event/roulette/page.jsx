@@ -26,6 +26,20 @@ const EventRoulette = () => {
       type: "oops",
       content: "꽝!",
       color: "#fff",
+    },
+    {
+      no: "2",
+      name: "10%",
+      type: "coupon",
+      content: "10%",
+      color: "#169ed8",
+    },
+    {
+      no: "3",
+      name: "꽝",
+      type: "oops",
+      content: "꽝!",
+      color: "#fff",
     }
   ];
 

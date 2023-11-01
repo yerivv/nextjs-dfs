@@ -15,6 +15,7 @@ export const metadata = {
   },
 }
 
+//https://xionwcfm.tistory.com/339
 //확인 : https://codevoweb.com/setup-react-query-in-nextjs-13-app-directory/
 
 export default function RootLayout({ children }) {

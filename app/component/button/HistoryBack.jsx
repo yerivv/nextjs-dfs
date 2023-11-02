@@ -1,13 +1,16 @@
 'use client'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation';
 import { useEffect } from "react";
 
 const HistoryBack = () => {
   const router = useRouter();
+  const pathName = usePathname();
+
+  console.log(pathName);
 
   const handleBtnBack = () => {
-    if (router.pathname === '/specific-page') {
-      router.push('/target-page');
+    if (pathName === '/order/finish') {
+      router.push('/');
   } else {
       router.back();
     }

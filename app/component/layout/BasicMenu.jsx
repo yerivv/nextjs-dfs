@@ -1,6 +1,11 @@
-const BasicMenu = () => {
+const BasicMenu = ( {active} ) => {
+  let activeClass;
+  if(active == true){
+    activeClass = 'active';
+  }
+
   return (
-    <div className="menu-wrapper">공통 메뉴 오픈</div>
+    <div className={`menu-wrapper ${activeClass}`}>공통 메뉴 오픈</div>
   )
 }
 

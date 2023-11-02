@@ -1,14 +1,16 @@
 'use client'
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation'
 import { useState } from 'react';
 import useResize from '@/app/hook/useResize';
 
 const UtilButtons = ({ name, color }) => {
+  const router = useRouter();
   const { isDesktop } = useResize();
   const [isHovered, setIsHovered] = useState(false);
-  const handleMouseEnter = (element) => {
-    setIsHovered(element, true);
+  const handleMouseEnter = () => {
+    setIsHovered(true);
   }
   const handleMouseLeave = () => {
     setIsHovered(false);
@@ -23,6 +25,11 @@ const UtilButtons = ({ name, color }) => {
 
   let boxHover = `box ${isHovered ? 'hover' : ''}`;
   let iconHover = `${isHovered ? '' : `${color}`}`;
+
+  const handleBtnCart = (e) => {
+    e.preventDefault();
+    router.push('/order/cart');
+  };
 
   return (
     <>
@@ -52,13 +59,13 @@ const UtilButtons = ({ name, color }) => {
   )}
   {name === 'cart' && (
     isDesktop ? (
-      <Link href="#" className={`count-box ${boxHover}`} {...boxEvents}>
+      <Link href="/order/cart" className={`count-box ${boxHover}`} {...boxEvents} onClick={handleBtnCart}>
         <i className={`icon medium h-cart ${iconHover}`}></i>
         <span className="count">0</span>
         <span className="text">장바구니</span>
       </Link>
     ) : (
-      <Link href="#" className="count-box">
+      <Link href="/order/cart" className="count-box" onClick={handleBtnCart}>
         <i className={`icon medium h-cart-m ${color}`}>장바구니</i>
         <span className="count">0</span>
       </Link>

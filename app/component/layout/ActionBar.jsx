@@ -1,11 +1,20 @@
+'use client'
 import Link from "next/link";
+import { useState } from "react";
+import BasicMenu from './BasicMenu';
 
 const ActionBar = () => {
+  const [isMenuActive, setMenuActive] = useState(false);
+  const handleMenuView = (e) => {
+    e.preventDefault();
+    setMenuActive(!isMenuActive);
+  }
   return (
     <div className="action-bar">
       <ul>
         <li>
-          <Link href="#"><i className="icon medium menu"></i>메뉴</Link>
+          <Link href="#" onClick={handleMenuView}><i className="icon medium menu"></i>메뉴</Link>
+          <BasicMenu active={isMenuActive} />
         </li>
         <li>
           <Link href="#"><i className="icon medium liquor"></i>주류전문관</Link>

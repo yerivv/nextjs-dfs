@@ -41,9 +41,14 @@ const ZoomSwiper = ({ slides, pattern }) => {
         <SwiperSlide className="swiper-slide" key={index}>
           <div className="box-banner">
             <Image src={slide.imageUrl} width={isDesktop ? 1300 : 375} height={isDesktop ? 500 : 450} style={{ width: '100%', height: 'auto' }} priority alt={isDesktop ? 'pc배너' : 'mo배너'}  />
+            <div>{slide.title}</div>
+            <div>{slide.description}</div>
           </div>
         </SwiperSlide>
       ))}
+      <SwiperSlide className="swiper-slide">
+        더보기
+      </SwiperSlide>
     </Swiper>
     </>
   )

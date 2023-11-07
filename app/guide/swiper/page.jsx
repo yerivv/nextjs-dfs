@@ -16,18 +16,18 @@ const GuideSwiper = () => {
     },
     {
       imageUrl: '/static/images/sample/banner/story-1.jpg',
-      title: 'Slide 2',
-      description: 'Description 2',
+      title: 'Slide 3',
+      description: 'Description 3',
     },
     {
       imageUrl: '/static/images/sample/banner/story-2.jpg',
-      title: 'Slide 2',
-      description: 'Description 2',
+      title: 'Slide 4',
+      description: 'Description 4',
     },
     {
       imageUrl: '/static/images/sample/banner/story-1.jpg',
-      title: 'Slide 2',
-      description: 'Description 2',
+      title: 'Slide 5',
+      description: 'Description 5',
     }
   ]
 

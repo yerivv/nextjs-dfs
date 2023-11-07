@@ -1,28 +1,40 @@
 
 .wrap-product {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap:40px 15px;
   position: relative;
   margin: 0 20px;
-  .item {
-    flex: 0 0 calc(50% - (15px/2));
-  }
 
   @include tablet {
-    .item {
-      flex: 0 0 calc(33.333% - 10px);
-    }
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @include desktop {
+    grid-template-columns: repeat(4, 1fr);
     gap:40px 20px;
     margin: 0;
-    .item {
-      flex: 0 0 calc(25% - 15px);
-    }
   }
+}
 
+.swiper-product {
+  .swiper {
+    padding: 0 20px 22px;
+  }
+  .swiper .swiper-pagination {
+    top: auto;
+    bottom: 0;
+    width: calc(100% - 40px);
+    height: 2px;
+    margin: 0 20px;
+    background: rgba(0,0,0,0.2);
+  }
+  .swiper .swiper-pagination-progressbar-fill {
+    background: rgba(0,0,0,1);
+  }
+}
+
+.item-product {
   .box-badge {
     position: absolute;
     top: 0;

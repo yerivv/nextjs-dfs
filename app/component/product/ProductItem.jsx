@@ -18,7 +18,7 @@ const ProductItem = ({ item }) => {
   const fotmattedPriceKo = priceKor(item.priceK);
 
   return (
-    <div className="item">
+    <div className="item-product">
       {/* <div className="box-badge">
         <span className="best">1</span>
         <span className="sale">단하루</span>

@@ -9,33 +9,38 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
-import { useEffect, useState } from "react";
 
-const BannerItem = ({ pcSlides, moSlides, pattern }) => {
+const ZoomSwiper = ({ slides, pattern }) => {
   const isDesktop = useResize();
-  const [options, setOptions] = useState({
-    slidesPerView: 1,
-    slides: moSlides,
+  const options = {
+    breakpoints: {
+      320: {
+        slidesPerView: 1.35,
+        spaceBetween: 10,
+      },
+      512: {
+        slidesPerView: 2.35,
+        spaceBetween: 20,
+      },
+      1025: {
+        slidesPerView: 3.35,
+        spaceBetween: 20,
+      },
+    },
     pagination: {
       clickable: true,
     },
     navigation: true,
     modules: [Pagination, Navigation]
-  })
-  useEffect(() => {
-    setOptions((prevOptions) => ({
-      ...prevOptions,
-      slides: isDesktop ? pcSlides : moSlides,
-    }));
-  }, [isDesktop])
+  }
 
   return (
     <>
     <Swiper {...options} className={pattern}>
-      {options.slides.map((slide, index) => (
+      {slides.map((slide, index) => (
         <SwiperSlide className="swiper-slide" key={index}>
           <div className="box-banner">
-            <Image src={slide} width={isDesktop ? 1300 : 375} height={isDesktop ? 500 : 450} style={{ width: '100%', height: 'auto' }} priority alt={isDesktop ? 'pc배너' : 'mo배너'}  />
+            <Image src={slide.imageUrl} width={isDesktop ? 1300 : 375} height={isDesktop ? 500 : 450} style={{ width: '100%', height: 'auto' }} priority alt={isDesktop ? 'pc배너' : 'mo배너'}  />
           </div>
         </SwiperSlide>
       ))}
@@ -44,4 +49,4 @@ const BannerItem = ({ pcSlides, moSlides, pattern }) => {
   )
 }
 
-export default BannerItem;
+export default ZoomSwiper;

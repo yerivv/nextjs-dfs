@@ -1,6 +1,7 @@
 import Image from "next/image"
-import ProductItem from "../../component/product/ProductItem";
-import BannerItem from "../../component/banner/BannerItem";
+import ProductSlideWrap from "@/app/component/product/ProductSlideWrap";
+import ProductItem from "@/app/component/product/ProductItem";
+import BannerItem from "@/app/component/banner/BannerItem";
 
 const fetchBrands = async () => {
   const res = await fetch("http://localhost:9016/brand", {cache: "no-store"});
@@ -33,6 +34,11 @@ const BrandDetail = async () => {
       <div className="intro">
         <h3 className="title">ABOUT</h3>
         <div className="context">{brand.intro}</div>
+      </div>
+
+      <div className="section">
+        <h3 className="title-section">브랜드 BEST</h3>
+        <ProductSlideWrap items={brand.product} pattern={`scroll`} />
       </div>
 
       <div className="section">

@@ -5,34 +5,31 @@ const GuideSwiper = () => {
   const slides = [
     {
       imageUrl: '/static/images/sample/banner/story-1.jpg',
-      title: 'High-End Anti-Aging',
+      title: 'SUMMER PERFUME',
       description:
-        '브랜드마다 내세우는 감동의 안티에이징 솔루션 제품\n높은 진입장벽에도 불구하고 수많은 이들이 기꺼이 지갑을 여는 이유',
-    },
-    {
-      imageUrl: '/static/images/sample/banner/story-2.jpg',
-      title: 'Slide 2',
-      description: 'Description 2',
+        '시원한 여름 시트러스 향수를 만나보자',
     },
     {
       imageUrl: '/static/images/sample/banner/story-1.jpg',
-      title: 'Slide 3',
-      description: 'Description 3',
-    },
-    {
-      imageUrl: '/static/images/sample/banner/story-2.jpg',
-      title: 'Slide 4',
-      description: 'Description 4',
+      title: 'List Entity 2',
+      description: 'Description goes here 2',
     },
     {
       imageUrl: '/static/images/sample/banner/story-1.jpg',
-      title: 'Slide 5',
-      description: 'Description 5',
+      title: 'List Entity 3',
+      description: 'Description goes here 3',
+    },
+    {
+      imageUrl: '/static/images/sample/banner/story-2.jpg',
+      title: 'List Entity 4',
+      description: 'Description goes here 4',
+    },
+    {
+      imageUrl: '/static/images/sample/banner/story-1.jpg',
+      title: 'List Entity 5',
+      description: 'Description goes here 5',
     }
   ]
-
-  const pattern = 'brand';
-  
   return (
     <>
       <h2>Swiper 가이드</h2>
@@ -44,7 +41,7 @@ const GuideSwiper = () => {
       <div className="guide-cont">
         1. active슬라이드 zoom
       </div>
-      <ZoomSwiper slides={slides} pattern={`zooms`} />
+      <ZoomSwiper slides={slides} pattern="zooms" />
     </>
   )
 }

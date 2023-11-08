@@ -68,3 +68,7 @@
 @mixin korean-back {
   background-color: $point-koreanair;
 }
+
+@mixin border-radius($type) {
+  border-radius: map-get($radius, $type);
+}
